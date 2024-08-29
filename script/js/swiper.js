@@ -1,7 +1,5 @@
-
-
 document.addEventListener('DOMContentLoaded', function () {
-    const swiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.swiper', {
         slidesPerView: 1,
         loop: true,
         speed: 0,
@@ -16,9 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-            },
+        // autoplay: {
+        //     delay: 5000,
+        //     disableOnInteraction: false,
+        // },
+        on: {
+            slideChangeTransitionEnd: function() {
+                swiper.autoplay.start(); // 슬라이드 변경 후 autoplay 재시작
+            }
+        }
     });
 });
