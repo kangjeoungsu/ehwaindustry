@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pretendard:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="script/css/common.css">
+    <link rel="stylesheet" href="script/css/index.css">
+    <script defer src="script/js/common.js"></script> 
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <section class="sec01">
+        <div class="">
+            <img src="images/main_banner01.jpg">
+        </div>
+    </section>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        function loadHTML(file, elementId) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(elementId).innerHTML = data;
+                })
+                .catch(error => console.error('Error loading HTML:', error));
+        }
+
+        loadHTML('header.html', 'header-placeholder');
+        loadHTML('footer.html', 'footer-placeholder');
+    </script>
+</body>
+</html>
