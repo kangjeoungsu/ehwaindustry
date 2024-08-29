@@ -1,1 +1,71 @@
 /* section01 */
+.sec01 .swiper-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.sec01 .swiper-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.sec01 .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: all 3s;
+    opacity: 0.8;
+}
+.sec01 .swiper-slide .txt-wrap {
+    width: 100%;
+    height: 100%;
+    padding: 0 4rem;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sec01 .swiper-slide .txt-wrap p {
+    max-width: 144rem;
+    width: 100%;
+    color: #fff;
+    font-size: 6.4rem;
+    font-weight: 600;
+}
+.sec01 .swiper-slide-active img {
+    transform: scale(1);
+    opacity: 1;
+    transition: all 3s;
+}
+.sec01 .swiper-pagination {
+    display: flex;
+    gap: 3.2rem;
+    position: absolute;
+}
+.sec01 .swiper-pagination-bullet {
+    width: fit-content;
+    height: fit-content;
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    opacity: 1;
+    background: transparent;
+    margin: 0;
+}
+.sec01 .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .sec01 .swiper-slide .txt-wrap {
+        /* width: calc(100% - 4rem); */
+    }
+}
