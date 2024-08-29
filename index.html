@@ -16,53 +16,38 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <img src="images/banner/main_banner01.jpg" alt="Main Banner 01">
-                    <div class="txt-wrap">      
+                    <div class="txt-wrap r-pd">      
                         <p>폐배터리를 자원으로<br />환경을 지키는 힘으로</p>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <img src="images/banner/main_banner02.jpg" alt="Main Banner 02">
-                    <div class="txt-wrap">      
+                    <div class="txt-wrap r-pd">      
                         <p>배터리 재활용으로<br />미래를 만들어 나갑니다</p>
                     </div>
                 </div>
-                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">
+                    <div class="swiper-slide">
+                        <img src="images/banner/main_banner03.jpg" alt="Main Banner 03">
+                        <div class="txt-wrap r-pd">      
+                            <p>배터리 재활용으로<br />미래를 만들어 나갑니다</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <!-- 추가 네비게이션 버튼 -->
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination-wrap">   
+                <div class="swiper-pagination"></div>
+            </div>
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
         </div>
     </section>
     <footer id="footer-placeholder"></footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script/js/swiper.js"></script> 
     <script src="script/js/common.js"></script> 
-    <script type="module">
-        import Swiper from 'swiper';
-        import 'swiper/swiper-bundle.min.css';
-
-        const swiper = new Swiper('.swiper-container', {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-                renderBullet: function (index, className) {
-                    return '<span class="' + className + '">' + ('0' + (index + 1)).slice(-2) + '</span>';
-                    }
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-                },
-        });
-    </script>
     <script>
         function loadHTML(file, elementId) {
             fetch(file)

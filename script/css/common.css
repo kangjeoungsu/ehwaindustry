@@ -21,7 +21,6 @@ li {
  
 /* header */
 header {
-    max-width: 100%;
     width: 100%;
     height: 10rem;
     padding: 0 4rem;
@@ -40,7 +39,13 @@ header .gnb-wrap {
     align-items: center;
     justify-content: space-between;
 }
-header .color-logo {
+header .logo-wrap {
+    width: 10rem;
+}
+header .logo-wrap img {
+    width: 100%;
+}
+header .logo-wrap img:first-child {
     display: none;
 } 
 header ul {
@@ -52,18 +57,58 @@ header ul li {
     color: #fff;
     font-weight: 500;
 }
+header .menu-wrap {
+    display: none;
+}
 header.scrolled {
     height: 7rem;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
     transition: all 0.3s;
 }
-header.scrolled .color-logo {
+header.scrolled .logo-wrap img:first-child {
     display: block;
 }
-header.scrolled .white-logo {
+header.scrolled .logo-wrap img:nth-child(2) {
     display: none;
 }
 header.scrolled ul li {
     color: #111;
+}
+.r-pd {
+    padding: 0 6rem;
+}
+
+@media (max-width: 1280px) {
+    html, body {
+        font-size: 58%;
+    }
+}
+
+@media (max-width: 970px) {
+    html, body {
+        font-size: 50%;
+    }
+    header ul {
+        display: none;
+    }
+    header .menu-wrap {
+        display: block;
+    }
+    header .menu-wrap img:first-child {
+        display: none;
+    }
+    .r-pd {
+        padding: 0 4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 8rem;
+        padding: 0 2rem;
+    }
+    .r-pd {
+        padding: 0 2rem;
+    }
 }
