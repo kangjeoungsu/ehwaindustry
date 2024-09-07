@@ -139,7 +139,7 @@
   flex-direction: row-reverse;
 }
 .sec02 h2 {
-  font-size: 10vw;
+  font-size: 8vw;
   text-align: center;
   margin-bottom: 10rem;
 }
@@ -156,6 +156,8 @@
 .sec02 .future04 .shape-wrap {
   width: clamp(18rem, 29.5vw, 32rem);
   height: clamp(18rem, 29.5vw, 32rem);
+  overflow: hidden;
+  position: relative;
 }
 .sec02 .future .shape-wrap svg {
   max-width: 100%;
@@ -182,11 +184,11 @@
   }
 }
 .sec02 .future02 .shape-wrap {
-  width: clamp(18rem, 29.5vw, 36rem);
-  height: clamp(18rem, 29.5vw, 36rem);
+  width: clamp(24rem, 32vw, 40rem);
+  height: clamp(24rem, 32vw, 40rem);
 }
 .sec02 .future02 svg {
-  animation: 4s future02 infinite;
+  animation: 3s future02 infinite;
   width: 100%;
   height: 100%;
 }
@@ -205,30 +207,52 @@
   }
 }
 
-.sec02 .future03 .animated-rect-1 {
-  animation: 4s future03-1 infinite;
+.sec02 .future03 .animate03 {
+  animation: 6s future03 infinite linear;
   transform-origin: center;
+  stroke-width: 4rem;
 }
-.sec02 .future03 .animated-rect-2 {
-  animation: 4s future03-2 infinite;
-  transform-origin: center;
+.sec02 .future03 .animate03:nth-child(2) {
+  visibility: hidden;
+  animation-delay: 2s;
 }
-
-@keyframes future03-1 {
+.sec02 .future03 .animate03:nth-child(3) {
+  visibility: hidden;
+  animation-delay: 4s;
+}
+.sec02 .future03 .animate03:nth-child(4) {
+  visibility: hidden;
+  animation-delay: 6s;
+}
+@keyframes future03 {
   0% {
+    transform: scale(0);
+    visibility: visible;
+  }
+  50% {
     transform: scale(1);
   }
   100% {
     transform: scale(2);
   }
 }
-
-@keyframes future03-2 {
+.sec02 .future04 svg {
+  animation: 4s future04 infinite;
+  transform-origin: center;
+  position: absolute;
+}
+@keyframes future04 {
   0% {
+    transform: scale(0);
+  }
+  33% {
     transform: scale(1);
   }
-  100% {
+  66% {
     transform: scale(2);
+  }
+  100% {
+    transform: scale(7);
   }
 }
 
@@ -239,9 +263,6 @@
 }
 
 @media (max-width: 768px) {
-  .sec02 h2 {
-    /* font-size: 7.2rem; */
-  }
   .sec02 .text-wrap h3 {
     font-size: 4rem;
   }
@@ -264,5 +285,11 @@
 @media (max-width: 480px) {
   .sec02 .text-wrap h3 {
     font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .sec02 p br {
+    display: none;
   }
 }
